@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <title>Welcome || Computer Vision</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">
+                <span class="text-primary"><i class="fab fa-accusoft"></i>AI</span>Sport
+            </h1>
+            <a href="#" class="nav-menu">Login</a>
+        </div>
+
+        <div class="content">
+            <h1>Welcome</h1>
+            <h3>AI adalah Potensi Besar Masa Depan</h3>
+            <a href="" class="btn btn-dark">Read More</a>
+        </div>
+
+    </header>
+
+    <div class="home-info">
+        <div class="info-img"></div>
+        <div class="info-content">
+            <h2><span class="text-primary">History</span> Of Health Activities</h2>
+            <p>Fitness, as we know it today, seems to be a relatively modern invention – something that started vaguely in the 70s with jogging and Jazzercise. But physical exercise obviously goes back much further than that, to a time where people wouldn’t have thought of it as working out, but rather a way of life. Centuries and millennia ago, they did not have all the machines and weights and gyms that we have today, and yet they were in better shape than we are. To understand why this is, how we got to our modern fitness culture, and what we have lost along the way, it’s helpful to take a look at the history of exercise.</p>
+            <a href="" class="btn btn-light">Read More</a>
+        </div>
+    </div>
+
+    <div class="testimonial-slider">
+        <ul class="slider">
+    <li>
+      <div class="testimonial-slider-content">
+        <q>This is the first quote in your slider!</q>
+        <p class="source">- Paul C, TX</p>
+      </div>
+    </li>
+    <li>
+      <div class="testimonial-slider-content">
+        <q>Here is the second one, this is awesome!</q>
+        <p class="source">- Ella M, TX</p>
+      </div>
+    </li>
+    <li>
+      <div class="testimonial-slider-content">
+        <q>Next, the third quote - AMAZING!</q>
+        <p class="source">- Blaine B, TX</p>
+      </div>
+    </li>
+    <li>
+      <div class="testimonial-slider-content">
+        <q>This is the last quote, I can't believe how well this worked!</q>
+        <p class="source">- Guillermo O, TX</p>
+      </div>
+    </li>
+  </ul>
+    </div>
+
+    <div class="service-info">
+        <div class="content">
+            <h1>Gesture Detector</h1>
+        </div>
+      <button type="button" onclick="init()" class="btn btn-dark">Start</button>
+      <div><canvas id="canvas"></canvas></div>
+      <div id="label-container"></div>
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+      <script type="text/javascript">
+          <div>Teachable Machine Pose Model</div>
+<button type="button" onclick="init()">Start</button>
+<div><canvas id="canvas"></canvas></div>
+<div id="label-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+<script type="text/javascript">
+    <div>Teachable Machine Pose Model</div>
+<button type="button" onclick="init()">Start</button>
+<div><canvas id="canvas"></canvas></div>
+<div id="label-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+<script type="text/javascript">
+    <div>Teachable Machine Pose Model</div>
+<button type="button" onclick="init()">Start</button>
+<div><canvas id="canvas"></canvas></div>
+<div id="label-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+<script type="text/javascript">
+    <div>Teachable Machine Pose Model</div>
+<button type="button" onclick="init()">Start</button>
+<div><canvas id="canvas"></canvas></div>
+<div id="label-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+<script type="text/javascript">
+    // More API functions here:
+    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
+
+    // the link to your model provided by Teachable Machine export panel
+    const URL = "https://teachablemachine.withgoogle.com/models/5NxlvBFp_/";
+    let model, webcam, ctx, labelContainer, maxPredictions;
+
+    async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        // load the model and metadata
+        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+        // Note: the pose library adds a tmPose object to your window (window.tmPose)
+        model = await tmPose.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        // Convenience function to setup a webcam
+        const size = 200;
+        const flip = true; // whether to flip the webcam
+        webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
+        await webcam.setup(); // request access to the webcam
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        // append/get elements to the DOM
+        const canvas = document.getElementById("canvas");
+        canvas.width = size; canvas.height = size;
+        ctx = canvas.getContext("2d");
+        labelContainer = document.getElementById("label-container");
+        for (let i = 0; i < maxPredictions; i++) { // and class labels
+            labelContainer.appendChild(document.createElement("div"));
+        }
+    }
+
+    async function loop(timestamp) {
+        webcam.update(); // update the webcam frame
+        await predict();
+        window.requestAnimationFrame(loop);
+    }
+
+    async function predict() {
+        // Prediction #1: run input through posenet
+        // estimatePose can take in an image, video or canvas html element
+        const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
+        // Prediction 2: run input through teachable machine classification model
+        const prediction = await model.predict(posenetOutput);
+
+        for (let i = 0; i < maxPredictions; i++) {
+            const classPrediction =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+            labelContainer.childNodes[i].innerHTML = classPrediction;
+        }
+
+        // finally draw the poses
+        drawPose(pose);
+    }
+
+    function drawPose(pose) {
+        if (webcam.canvas) {
+            ctx.drawImage(webcam.canvas, 0, 0);
+            // draw the keypoints and skeleton
+            if (pose) {
+                const minPartConfidence = 0.5;
+                tmPose.drawKeypoints(pose.keypoints, minPartConfidence, ctx);
+                tmPose.drawSkeleton(pose.keypoints, minPartConfidence, ctx);
+            }
+        }
+    }
+
+
+ </script>
+    </div>
+
+    <section id="contact">
+        <div class="sectionheader"> <h1>CONTACT</h1></div>
+        <article>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit quis fugit earum autem quo perferendis harum incidunt alas commodi est.</p>
+        <label for="checkcontact" class="contactbutton"><div class="mail"></div></label><input id="checkcontact" type="checkbox">
+        <form action="" method="post" class="contactform">
+            <p class="input_wrapper"><input type="text" name="contact_nom" value=""  id ="contact_nom"><label for="contact_nom">NAME</label></p>
+            <p class="input_wrapper"><input type="text" name="contact_email" value=""  id ="contact_email"><label for="contact_email">EMAIL</label></p>
+            <p class="input_wrapper"><input type="text" name="contact_sujet" value=""  id ="contact_sujet"><label for="contact_sujet">SUBJECT</label></p>
+            <p class="textarea_wrapper"><textarea name="contact_message" id="contact_message"></textarea></p>
+            <p class="submit_wrapper"><input type="submit" value="ENVOYER"></p>         
+        </form>
+        </article>
+    </section>
+
+    <footer>
+        <p>AISport &copy; 2021, Right Reserved</p>
+    </footer>
+
+</body>
+</html>
